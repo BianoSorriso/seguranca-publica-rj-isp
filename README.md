@@ -9,7 +9,7 @@
 
 | | |
 |---|---|
-| **Autoria** | [FABIANO BASTOS] |
+| **Autoria** | FABIANO BASTOS |
 | **Curso** | Bacharelado em Sistemas de Informação, UniLaSalle · 6º período |
 | **Disciplina** | Linguagem de Programação (Análise e Visualização de Dados com Python) |
 | **Semestre** | 2026.2 |
@@ -118,5 +118,5 @@ O pipeline é **determinístico**: executar `python -m src.etl` novamente (inclu
 
 ## Como citar
 
-[FABIANO BASTOS]. *Estatísticas de segurança do estado do Rio de Janeiro (2014–2026)*. Repositório GitHub, 2026.
+FABIANO BASTOS. *Estatísticas de segurança do estado do Rio de Janeiro (2014–2026)*. Repositório GitHub, 2026.
 Disponível em: <https://github.com/BianoSorriso/seguranca-publica-rj-isp>.
