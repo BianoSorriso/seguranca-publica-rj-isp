@@ -1,0 +1,44 @@
+{
+  "linhas_entrada": 14076,
+  "linhas_saida": 14076,
+  "linhas_removidas": 0,
+  "colunas_entrada": 62,
+  "colunas_saida": 70,
+  "nulos_antes": {
+    "feminicidio": 11868,
+    "tentativa_feminicidio": 11868
+  },
+  "decisao_nulos": "feminicidio e tentativa_feminicidio mantidos como NA antes de 2024-10: série inexistente, não igual a zero.",
+  "linhas_dado_preliminar": 276,
+  "linhas_inconsist_total_roubos": 708,
+  "linhas_inconsist_total_furtos": 738,
+  "identidades_verificadas": {
+    "cvli = hom_doloso + lesao_corp_morte + latrocinio": true,
+    "letalidade_violenta = cvli + interv. policial + feminicidio (desde out/2024)": true,
+    "letalidade_violenta = cvli + interv. policial (antes de out/2024)": true,
+    "roubo_rua = transeunte + celular + coletivo": true
+  },
+  "validacao": {
+    "colunas_extras": [],
+    "chaves_duplicadas": 0,
+    "municipios": 92,
+    "painel_balanceado": true,
+    "linhas_por_mes": 92,
+    "periodo": [
+      "2014m01",
+      "2026m09"
+    ]
+  },
+  "arquivo_bruto": "BaseMunicipioMensal.csv",
+  "sha256_bruto": "168185ab701253875f6be183143aac77f6d3d8227379340d647b210fcac37b06",
+  "executado_em_utc": "2026-11-14T08:47:30+00:00",
+  "ambiente": {
+    "python": "3.12.3",
+    "pandas": "3.1.1",
+    "numpy": "2.5.4"
+  },
+  "saidas": {
+    "base_municipio_mensal.parquet": 494927,
+    "base_municipio_mensal.csv.gz": 559576
+  }
+}
