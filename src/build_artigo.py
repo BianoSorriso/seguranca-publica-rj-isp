@@ -17,7 +17,7 @@ DOCS = etl.RAIZ / "docs"
 ASSETS = DOCS / "assets"
 
 # ---- identificação (ajuste aqui, se necessário, e rode novamente) ----------------------------
-AUTOR = "[FABIANO BASTOS]"
+AUTOR = "FABIANO BASTOS"
 USUARIO_GITHUB = "BianoSorriso"
 REPOSITORIO = "seguranca-publica-rj-isp"
 REPO_URL = f"https://github.com/{USUARIO_GITHUB}/{REPOSITORIO}"
@@ -26,45 +26,82 @@ SEMESTRE = "2026.2"
 FONTE_URL = "https://www.ispdados.rj.gov.br/"
 
 CSS = """
-:root{--tx:#1f2937;--mut:#6b7280;--az:#1f4e79;--la:#d1782f;--ve:#2a7f62;--bg:#fff;--bg2:#f4f6f9;--bd:#d9dee5}
-@media (prefers-color-scheme:dark){:root{--tx:#e5e7eb;--mut:#9ca3af;--az:#8fbce6;--la:#f0a56a;--ve:#6fcfa8;--bg:#111827;--bg2:#1b2433;--bd:#2f3b4f}}
+:root{--tx:#1c2433;--mut:#5f6b7c;--az:#17456f;--az2:#2563a8;--la:#d1782f;--ve:#2a7f62;--rd:#b4443a;--bg:#fbfaf7;--card:#fff;--bg2:#f1f3f7;--bd:#dde2ea;--sh:0 1px 2px rgba(16,24,40,.05),0 4px 14px rgba(16,24,40,.06);--hero1:#10345a;--hero2:#1d5a94}
+@media (prefers-color-scheme:dark){:root{--tx:#e6e9ef;--mut:#9aa6b8;--az:#8fbce6;--az2:#8fbce6;--la:#f0a56a;--ve:#6fcfa8;--rd:#f08a80;--bg:#0f1520;--card:#17202e;--bg2:#1b2636;--bd:#2c3a4f;--sh:0 1px 2px rgba(0,0,0,.4),0 4px 14px rgba(0,0,0,.3);--hero1:#0b2542;--hero2:#14426d}}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--tx);font:17px/1.7 Georgia,'Times New Roman',serif}
-.wrap{max-width:860px;margin:0 auto;padding:0 20px 60px}
-header.top{background:var(--bg2);border-bottom:1px solid var(--bd);padding:36px 0 28px;margin-bottom:28px}
-h1{font-size:1.85rem;line-height:1.25;margin:0 0 14px;color:var(--az)}
-h2{font-size:1.4rem;margin:2.2em 0 .5em;color:var(--az);border-bottom:2px solid var(--bd);padding-bottom:.2em}
-h3{font-size:1.12rem;margin:1.8em 0 .4em}
-.meta{font-family:system-ui,Segoe UI,Arial,sans-serif;font-size:.92rem;color:var(--mut);line-height:1.55}
-.meta strong{color:var(--tx)}
-.badges{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 4px;font-family:system-ui,Arial,sans-serif;font-size:.78rem}
-.badge{display:inline-flex;border-radius:4px;overflow:hidden;border:1px solid var(--bd);text-decoration:none}
-.badge span{padding:3px 8px}.badge .k{background:var(--bg);color:var(--mut)}.badge .v{background:var(--az);color:#fff}
-.btn{display:inline-block;margin-top:14px;padding:9px 16px;background:var(--az);color:#fff;border-radius:6px;text-decoration:none;font-family:system-ui,Arial,sans-serif;font-size:.92rem}
-.btn:hover{opacity:.9}
-.resumo{background:var(--bg2);border-left:4px solid var(--az);padding:14px 20px;margin:18px 0;border-radius:0 6px 6px 0}
-.resumo h2{border:0;margin:0 0 6px;font-size:1.1rem}
-.resumo p{margin:.4em 0;text-align:justify}
-.kw{font-family:system-ui,Arial,sans-serif;font-size:.9rem;color:var(--mut)}
-p{text-align:justify;hyphens:auto}
-figure{margin:1.6em 0;text-align:center}
-figure img{max-width:100%;height:auto;border:1px solid var(--bd);border-radius:4px;background:#fff}
-figcaption{font-family:system-ui,Arial,sans-serif;font-size:.86rem;color:var(--mut);margin-top:6px;text-align:left}
-.pl{margin:1.6em 0;text-align:left}
-table{border-collapse:collapse;width:100%;font-family:system-ui,Arial,sans-serif;font-size:.88rem;margin:1em 0}
-th,td{border:1px solid var(--bd);padding:6px 9px;text-align:left;vertical-align:top}
-th{background:var(--bg2)}
-.tw{overflow-x:auto}
-pre{background:#0f172a;color:#e2e8f0;padding:14px 16px;border-radius:6px;overflow-x:auto;font-size:.82rem;line-height:1.5}
-code{font-family:ui-monospace,Consolas,Menlo,monospace}
-p code,td code,li code{background:var(--bg2);padding:1px 5px;border-radius:3px;font-size:.88em}
-.nota{font-family:system-ui,Arial,sans-serif;font-size:.88rem;background:var(--bg2);border:1px solid var(--bd);padding:10px 14px;border-radius:6px;margin:1em 0}
-ol.ref{padding-left:1.3em}ol.ref li{margin:.55em 0;text-align:left;font-size:.95rem}
-footer{border-top:1px solid var(--bd);margin-top:40px;padding-top:16px;font-family:system-ui,Arial,sans-serif;font-size:.85rem;color:var(--mut)}
-a{color:var(--az)}
-@media (max-width:600px){body{font-size:16px}h1{font-size:1.5rem}p{text-align:left}.resumo p{text-align:left}}
-@media print{.btn,.badges{display:none}body{font-size:12pt}}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;background:var(--bg);color:var(--tx);font:18px/1.75 Georgia,'Times New Roman',serif;-webkit-font-smoothing:antialiased}
+.sans,.meta,.badges,.btn,.toc,.kpi,figcaption,table,.nota,.kw,footer,.eyebrow{font-family:system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--la);z-index:50}
+/* hero */
+.hero{background:linear-gradient(135deg,var(--hero1),var(--hero2));color:#fff;padding:56px 20px 76px}
+.hero .in{max-width:1120px;margin:0 auto}
+.eyebrow{display:inline-block;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;background:rgba(255,255,255,.14);padding:5px 12px;border-radius:99px;margin-bottom:18px}
+.hero h1{font:700 clamp(1.7rem,3.6vw,2.7rem)/1.18 Georgia,serif;margin:0 0 10px;max-width:880px;color:#fff}
+.hero .sub{font:1.1rem/1.5 system-ui,sans-serif;opacity:.88;max-width:760px;margin:0 0 24px}
+.meta{display:flex;flex-wrap:wrap;gap:10px 28px;font-size:.9rem;opacity:.95;margin-bottom:22px}
+.meta span b{display:block;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;opacity:.7;font-weight:600}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px;font-size:.76rem}
+.badge{display:inline-flex;border-radius:5px;overflow:hidden;text-decoration:none;border:1px solid rgba(255,255,255,.28)}
+.badge span{padding:3px 9px}.badge .k{background:rgba(255,255,255,.12);color:#fff}.badge .v{background:#fff;color:var(--hero1);font-weight:600}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-block;padding:10px 18px;background:#fff;color:var(--hero1);border-radius:8px;text-decoration:none;font-size:.92rem;font-weight:600}
+.btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.5)}
+.btn:hover{transform:translateY(-1px)}
+/* kpis */
+.kpis{max-width:1120px;margin:-46px auto 0;padding:0 20px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;position:relative}
+.kpi{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:16px 18px;box-shadow:var(--sh);border-top:4px solid var(--az2)}
+.kpi.o{border-top-color:var(--la)}.kpi.g{border-top-color:var(--ve)}.kpi.r{border-top-color:var(--rd)}
+.kpi .n{font-size:2rem;font-weight:800;line-height:1.1;color:var(--az);letter-spacing:-.02em}
+.kpi.o .n{color:var(--la)}.kpi.g .n{color:var(--ve)}.kpi.r .n{color:var(--rd)}
+.kpi .l{font-size:.84rem;color:var(--mut);margin-top:6px;line-height:1.4}
+/* layout */
+.layout{max-width:1120px;margin:40px auto 0;padding:0 20px;display:grid;grid-template-columns:230px minmax(0,1fr);gap:48px}
+.toc{position:sticky;top:24px;align-self:start;font-size:.88rem;max-height:calc(100vh - 48px);overflow:auto}
+.toc h4{margin:0 0 10px;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+.toc a{display:block;padding:6px 12px;color:var(--mut);text-decoration:none;border-left:2px solid var(--bd);line-height:1.35}
+.toc a:hover{color:var(--az)}
+.toc a.on{color:var(--az);border-left-color:var(--la);font-weight:600;background:var(--bg2)}
+main{min-width:0;padding-bottom:40px}
+main>p,main>ul,main>ol,main>h3,main>.tw,main>pre,main>.nota{max-width:720px}
+h2{font:700 1.65rem/1.25 Georgia,serif;margin:2.6em 0 .7em;color:var(--az);padding-top:.2em;display:flex;align-items:baseline;gap:12px}
+h2::after{content:"";flex:1;height:1px;background:var(--bd)}
+h3{font:700 1.15rem/1.3 system-ui,sans-serif;margin:2em 0 .5em;color:var(--tx)}
+p{margin:.9em 0}
+ul{padding-left:1.2em}li{margin:.3em 0}
+a{color:var(--az2);text-underline-offset:3px}
+strong{color:var(--tx)}
+/* resumo */
+.resumo{background:var(--card);border:1px solid var(--bd);border-left:5px solid var(--az2);border-radius:10px;padding:20px 26px;margin:0 0 20px;box-shadow:var(--sh);max-width:none}
+.resumo h2{display:block;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;font-family:system-ui,sans-serif;margin:0 0 8px;color:var(--mut);padding:0}
+.resumo h2::after{display:none}
+.resumo p{margin:.5em 0;font-size:1.02rem;line-height:1.7}
+.kw{font-size:.86rem;color:var(--mut)}
+/* figuras */
+figure{margin:2em 0;background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:14px;box-shadow:var(--sh);text-align:center}
+figure img{max-width:100%;height:auto;border-radius:6px;background:#fff}
+figcaption{font-size:.84rem;color:var(--mut);margin-top:10px;text-align:left;line-height:1.5;padding:0 4px}
+figcaption strong{color:var(--az)}
+.pl{text-align:left}
+/* tabelas */
+.tw{overflow-x:auto;margin:1.4em 0;border:1px solid var(--bd);border-radius:10px;background:var(--card);box-shadow:var(--sh)}
+table{border-collapse:collapse;width:100%;font-size:.88rem;margin:0}
+caption{caption-side:top;text-align:left;font-weight:700;padding:12px 14px 8px;color:var(--az)}
+th,td{padding:10px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--bd)}
+th{background:var(--bg2);font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+tbody tr:nth-child(even){background:var(--bg2)}tbody tr:last-child td{border-bottom:0}
+/* codigo */
+pre{background:#0d1626;color:#e2e8f0;padding:16px 18px;border-radius:10px;overflow-x:auto;font-size:.8rem;line-height:1.55;border:1px solid #1e2c44}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,Menlo,monospace}
+p code,td code,li code{background:var(--bg2);border:1px solid var(--bd);padding:1px 6px;border-radius:4px;font-size:.84em}
+.nota{font-size:.9rem;background:var(--bg2);border-left:4px solid var(--la);padding:12px 16px;border-radius:0 8px 8px 0;margin:1.4em 0}
+ol.ref{padding-left:1.4em}ol.ref li{margin:.7em 0;font-size:.94rem;line-height:1.55;padding-left:.2em}
+footer{border-top:1px solid var(--bd);margin-top:48px;padding-top:18px;font-size:.84rem;color:var(--mut)}
+#top{position:fixed;right:18px;bottom:18px;width:42px;height:42px;border-radius:50%;background:var(--az2);color:#fff;border:0;font-size:1.2rem;cursor:pointer;box-shadow:var(--sh);opacity:0;pointer-events:none;transition:opacity .2s}
+#top.show{opacity:1;pointer-events:auto}
+@media (max-width:980px){.layout{grid-template-columns:1fr;gap:0}.toc{display:none}.kpis{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){body{font-size:17px}.hero{padding:40px 16px 70px}.kpis{gap:10px;padding:0 14px}.kpi .n{font-size:1.6rem}.layout{padding:0 14px}}
+@media print{.toc,#progress,#top,.btns,.badges{display:none}.layout{display:block}.hero{background:none;color:#000;padding:0}.hero h1{color:#000}body{font-size:12pt;background:#fff}.kpis{margin-top:10px}figure,.kpi,.tw{box-shadow:none;break-inside:avoid}}
 """
 
 
@@ -213,7 +250,7 @@ Nenhuma linha é descartada e nenhum valor original é sobrescrito; cada decisã
 <code>data/processed/etl_log.json</code>, junto do SHA-256 do arquivo bruto. A validação encontrou quatro
 particularidades, tratadas como a Tabela 1 resume.</p>
 <div class="tw"><table>
-<caption style="caption-side:top;text-align:left;font-weight:bold;padding-bottom:4px">Tabela 1 — Inconsistências da base e decisão de tratamento</caption>
+<caption>Tabela 1 — Inconsistências da base e decisão de tratamento</caption>
 <thead><tr><th>Achado</th><th>Decisão</th></tr></thead><tbody>
 <tr><td>Feminicídio e tentativa de feminicídio só existem a partir de out/2024 (11.868 valores ausentes).</td>
 <td>Mantidos como ausentes (<code>NA</code>), pois a série não existia. Imputar zero criaria 129 meses de "nenhum caso".</td></tr>
@@ -371,12 +408,15 @@ TEMPLATE = """<!DOCTYPE html>
 <script type="application/ld+json">[[jsonld]]</script>
 </head>
 <body>
-<header class="top"><div class="wrap">
-<h1>Estatísticas de segurança do estado do Rio de Janeiro (2014–2026): letalidade violenta, crimes patrimoniais e concentração territorial</h1>
+<div id="progress"></div>
+<header class="hero"><div class="in">
+<span class="eyebrow">Artigo · Análise de dados com Python</span>
+<h1>Estatísticas de segurança do estado do Rio de Janeiro (2014–2026)</h1>
+<p class="sub">Letalidade violenta, crimes patrimoniais e concentração territorial nos [[n_mun]] municípios fluminenses, a partir da série mensal do ISP-RJ.</p>
 <div class="meta">
-<strong>Autoria:</strong> [[autor]]<br>
-<strong>Filiação:</strong> Bacharelado em Sistemas de Informação, UniLaSalle · 6º período<br>
-<strong>Disciplina:</strong> Linguagem de Programação (Análise e Visualização de Dados com Python) · <strong>Semestre:</strong> [[semestre]]
+<span><b>Autoria</b>[[autor]]</span>
+<span><b>Curso</b>Sistemas de Informação, UniLaSalle · 6º período</span>
+<span><b>Disciplina</b>Linguagem de Programação · [[semestre]]</span>
 </div>
 <div class="badges">
 <a class="badge" href="[[repo]]"><span class="k">código</span><span class="v">MIT</span></a>
@@ -385,15 +425,24 @@ TEMPLATE = """<!DOCTYPE html>
 <span class="badge"><span class="k">linguagem</span><span class="v">Python 3.12</span></span>
 <span class="badge"><span class="k">fonte</span><span class="v">ISP-RJ</span></span>
 </div>
-<a class="btn" href="[[repo]]">Ver repositório no GitHub</a>
+<div class="btns"><a class="btn" href="[[repo]]">Ver repositório no GitHub</a><a class="btn ghost" href="#resultados">Ir aos resultados</a></div>
 </div></header>
-<main class="wrap">
+<section class="kpis" aria-label="Principais resultados">
+<div class="kpi g"><div class="n">−[[var_let]]</div><div class="l">letalidade violenta harmonizada, [[a0]] a [[a1]] (jan–[[mes_fim]])</div></div>
+<div class="kpi r"><div class="n">[[pct_pico]]</div><div class="l">pico da participação das mortes por intervenção de agente do Estado ([[pct_pico_ano]])</div></div>
+<div class="kpi"><div class="n">−[[queda_rou]]</div><div class="l">queda dos roubos, do pico de [[pico_rou_ano]] a [[menor_rou_ano]]</div></div>
+<div class="kpi o"><div class="n">[[top5_hom]]</div><div class="l">dos homicídios dolosos estão em apenas 5 municípios</div></div>
+</section>
+<div class="layout">
+<nav class="toc" aria-label="Índice"><h4>Nesta página</h4>
+<a href="#resumo">Resumo</a><a href="#introducao">1. Introdução</a><a href="#metodologia">2. Metodologia</a><a href="#resultados">3. Resultados</a><a href="#conclusao">4. Conclusão</a><a href="#fair">5. FAIR e reprodução</a><a href="#referencias">6. Referências</a></nav>
+<main>
 <section class="resumo" aria-labelledby="resumo">
 <h2 id="resumo">Resumo</h2>
 <p>[[resumo]]</p>
 <p class="kw"><strong>Palavras-chave:</strong> segurança pública; Rio de Janeiro; letalidade violenta; crimes patrimoniais; ciência aberta (FAIR).</p>
 </section>
-<section class="resumo" aria-labelledby="abstract" lang="en">
+<section class="resumo" aria-labelledby="abstract" lang="en" style="border-left-color:var(--la)">
 <h2 id="abstract">Abstract</h2>
 <p>[[abstract]]</p>
 <p class="kw"><strong>Keywords:</strong> public security; Rio de Janeiro; violent lethality; property crime; open science (FAIR).</p>
@@ -405,6 +454,22 @@ TEMPLATE = """<!DOCTYPE html>
 Fonte dos dados brutos: <a href="[[fonte]]">ISP-RJ / ISPDados</a>. Página gerada por <code>src/build_artigo.py</code>.</p>
 </footer>
 </main>
+</div>
+<button id="top" aria-label="Voltar ao topo">↑</button>
+<script>
+(function(){
+var bar=document.getElementById('progress'),top=document.getElementById('top');
+var links=[].slice.call(document.querySelectorAll('.toc a'));
+var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));});
+function upd(){
+var h=document.documentElement,st=h.scrollTop||document.body.scrollTop,mx=h.scrollHeight-h.clientHeight;
+bar.style.width=(mx>0?st/mx*100:0)+'%';top.classList.toggle('show',st>600);
+var cur=0;secs.forEach(function(s,i){if(s&&s.getBoundingClientRect().top<120)cur=i;});
+links.forEach(function(a,i){a.classList.toggle('on',i===cur);});}
+window.addEventListener('scroll',upd,{passive:true});upd();
+top.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
 </body>
 </html>
 """
